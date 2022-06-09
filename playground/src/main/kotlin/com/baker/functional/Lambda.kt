@@ -35,21 +35,21 @@ fun main(args: Array<String>) {
     val peopleList: List<Person> = listOf(Person("AA", 15), Person("BB", 20), Person("CC", 25), Person("DD", 30));
 
     // 람다를 괄호 밖으로
-    peopleList.maxBy() { p: Person -> p.age }
+    println(peopleList.maxByOrNull { p: Person -> p.age })
 
     // 람다가 유일한 인자이고 괄호 뒤에 람다를 썼으므로 빈 괄호를 제거
-    peopleList.maxBy { p: Person -> p.age }
+    println(peopleList.maxByOrNull { p: Person -> p.age })
 
     // 타입 추론이 가능한 경우 타입을 제거
     // 람다를 변수에 저장할 때는 추론이 불가하므로 타입을 명시해야함. 아래와 같이 쓸 수 없음
-    peopleList.maxBy { p -> p.age }
+    println(peopleList.maxByOrNull { p -> p.age })
     // val getAge = { p -> p.age } // 불가
 
     // 람다 파라미터 이름을 디폴트 이름인 it 으로 바꿈.
-    peopleList.maxBy { it.age }
+    println(peopleList.maxByOrNull { it.age })
 
     // 멤버 참조 (자바의 메서드 참조) 형식으로 다음과 같이 바꿀수도 있다
-    peopleList.maxBy(Person::age)
+    println(peopleList.maxByOrNull(Person::age))
 
     /***************
      *    예제 2    *
@@ -81,7 +81,7 @@ fun main(args: Array<String>) {
      * 이 함수의 호출 결과는 항상 0이다.
      */
     for (i in 1..10) {
-        println("외부 호출 결과: ${tryToCountButtonClicks(Button())}")
+        println("외부 호출 결과 : ${tryToCountButtonClicks(Button())}")
     }
 
     println("")
@@ -94,7 +94,7 @@ fun main(args: Array<String>) {
     // 생성자 참조를 만들때도 동일하게 :: 를 사용할 수 있다.
     val createPerson = ::Person			// 참조 생성
     val p = createPerson("Alice", 29)	// 실제 인스턴스 생성
-    println("Person 정보 - ${p}}")
+    println("Person 정보 - ${p}")
 
     //확장 함수도 동일한 방식으로 참조 가능
     fun Person.isAdult() = age >= 21
@@ -200,6 +200,6 @@ class Person(var name: String, val age: Int) {
 
 class Button() {
     fun onClick(function: () -> Int) {
-        println("내부 호출 결과" + function())
+        println("내부 호출 결과 : ${function()}")
     }
 }
