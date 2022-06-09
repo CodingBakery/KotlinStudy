@@ -35,7 +35,7 @@ fun main(args: Array<String>) {
     val peopleList: List<Person> = listOf(Person("AA", 15), Person("BB", 20), Person("CC", 25), Person("DD", 30));
 
     // 람다를 괄호 밖으로
-    println(peopleList.maxByOrNull { p: Person -> p.age })
+    println(peopleList.maxByOrNull() { p: Person -> p.age })
 
     // 람다가 유일한 인자이고 괄호 뒤에 람다를 썼으므로 빈 괄호를 제거
     println(peopleList.maxByOrNull { p: Person -> p.age })
@@ -77,11 +77,17 @@ fun main(args: Array<String>) {
     println("$clientErrors client errors, $serverErrors serverErrors")
 
     /**
-     * 단 비동기 호출 구조로 작성되어, 함수 호출이 끝난 후에 로컬 변수가 변경되는 경우 원하는대로 동작하지 않을 수 있다.
-     * 이 함수의 호출 결과는 항상 0이다.
+     * 로컬 함수 내에서 선언된 변수의 경우에는 그 생명주기가 기본적으로는 그 변수를 선언한 로컬 함수와 같다.
+     * 하지만 로컬 함수 내에 있는 람다에 의해 포획된 로컬 변수는 그 생명주기를 람다와 함께 한다.
+     *
+     * 참고: https://github.com/3tudy/kotlin/issues/5
      */
     for (i in 1..10) {
-        println("외부 호출 결과 : ${tryToCountButtonClicks(Button())}")
+        var(clicks, increaseClicks) = tryToCountButtonClicks(Button())
+        println("호출 결과 : clicks - ${clicks}, increaseClicks lambda - ${increaseClicks()}")
+        println("호출 결과 : clicks - ${clicks}, increaseClicks lambda - ${increaseClicks()}")
+        println("호출 결과 : clicks - ${clicks}, increaseClicks lambda - ${increaseClicks()}")
+        println("호출 결과 : clicks - ${clicks}, increaseClicks lambda - ${increaseClicks()}")
     }
 
     println("")
@@ -184,10 +190,13 @@ fun main(args: Array<String>) {
 //    println("sum3 - ${sum3(1, 2)}")
 }
 
-fun tryToCountButtonClicks(button: Button): Int {
+fun tryToCountButtonClicks(button: Button): Pair<Int, () -> Int> {
     var clicks = 0
-    button.onClick { clicks++ }
-    return clicks
+    var increaseClick = { clicks++ }
+    button.onClick {
+        increaseClick()
+    }
+    return Pair(clicks, increaseClick)
 }
 
 fun salute() = println("Salute!")
@@ -200,6 +209,6 @@ class Person(var name: String, val age: Int) {
 
 class Button() {
     fun onClick(function: () -> Int) {
-        println("내부 호출 결과 : ${function()}")
+        function()
     }
 }
