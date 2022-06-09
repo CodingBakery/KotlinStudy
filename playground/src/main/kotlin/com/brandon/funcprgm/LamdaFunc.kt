@@ -26,3 +26,4 @@ val otherlambda: () -> Boolean = {
     println("otherlambda2 Func")
     true
 }
+

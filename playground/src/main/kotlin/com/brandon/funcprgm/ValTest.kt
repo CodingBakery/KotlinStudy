@@ -21,3 +21,4 @@ fun main() {
     val nestedLamda = {{ println("nested")}} // 추론 가능.
     val nestedLamda2: () -> () -> Unit = {{println("nested")}} // 추론 가능.
 }
+
