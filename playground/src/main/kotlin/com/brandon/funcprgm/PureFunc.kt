@@ -5,7 +5,6 @@ fun pureAdd (x: Int, y:Int ) : Int {
 }
 
 val outer = 3
-
 fun noPureAdd (x: Int, y:Int ) : Int {
     return x + y + outer // fun 은 return 으로~
 }
