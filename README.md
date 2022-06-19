@@ -9,5 +9,5 @@
     - Gradle: 7.3.1
 
 ## 문서작성 시 마크다운 예정 사이트
-[마크다운1] (https://gist.github.com/ihoneymon/652be052a0727ad59601)
-[마크다운 간단예제] (https://bskyvision.com/1140)
+- [마크다운1] (https://gist.github.com/ihoneymon/652be052a0727ad59601)
+- [마크다운 간단예제] (https://bskyvision.com/1140)
