@@ -85,6 +85,10 @@ val boxNull: Box<String?> = Box(null) // null 가능
 class GenericNull<T: Any> { // Any가 upper bound로 지정되어 null을 허용하지 않음
 
 }
+
+val obj = GenericNull<Int>()
+//val obj = GenericNull<Int?>() // 오류!
+
 // 여러개의 upper bound 필요
 fun <T> myMax(a: T, b: T): T where T:Number, T:Comparable<T> {
     return if (a > b) a else b

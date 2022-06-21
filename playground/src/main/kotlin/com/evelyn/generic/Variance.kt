@@ -8,9 +8,9 @@ fun main() {
      * Int는 Int? 의 하위 자료형이다.
      */
 
-    val obj = GenericNull<Int>()
-//val obj = GenericNull<Int?>() // 오류!
-
+    val a:Int = 1
+    val b:Int? = a
+    
     /**
      * 가변성을 지정하지 않으면 형식 매개변수에 상/하위 클래스가 지정되어도 서로 자료형이 변환되지 않음.
      */
