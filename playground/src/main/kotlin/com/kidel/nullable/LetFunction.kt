@@ -16,8 +16,8 @@ fun main() {
     }
     fun beautify(s: String?) {
         s?.let {    // safe call 뒤에 let이 호출되므로
-            decorateStr(it) // it은 not null
+            println("RESULT => ${decorateStr(it)}")
         }
     }
-    println("RESULT => ${beautify(null)}")
+    beautify(null)
 }
