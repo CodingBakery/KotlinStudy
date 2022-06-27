@@ -9,6 +9,7 @@ package com.evelyn.extensionFunction;
  * 또한, 확장 함수가 들어있는 파일 이름에 따라 자바 클래스 이름이 결정된다. (ExtensionFunction.kt -> ExtenskonFunctionKt.class)
  */
 public class CallFromJava {
-    // 이렇게 호출하면 된다고 하는데 convert 를 왜 인식하지 못할까..?
-//    ExtensionFunctionKt.convert("call from java~");
+    public static void main(String[] args) {
+        ExtensionFunctionKt.convert("hello~~");
+    }
 }
