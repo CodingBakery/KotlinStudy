@@ -22,8 +22,9 @@ fun main() {
      * - 기본 상한은 Any?
      */
     println("#### Type Parameter : nullable ####")
-    fun <T: Any> printHashCode2(t: T) {
+    fun <T: Any> printHashCode2(t: T) : T {
         println("HASH => ${t.hashCode()}")
+        return t
     }
     printHashCode2("not null")
 
