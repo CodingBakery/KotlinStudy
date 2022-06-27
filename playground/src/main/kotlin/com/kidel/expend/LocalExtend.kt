@@ -57,7 +57,7 @@ fun releaseKeyboard3(keyboard: Keyboard) {
     println("### NEW ARRIVAL: ${keyboard.name} [${keyboard.switch}] ###")
 }
 
-/** [개선 4] 확장 함수로 정의 */
+/** [개선 3] 확장 함수로 정의 */
 fun Keyboard.validateBeforeRelease() {
     fun validate(value: String, fieldName: String) {
         if (value.isEmpty()) {
