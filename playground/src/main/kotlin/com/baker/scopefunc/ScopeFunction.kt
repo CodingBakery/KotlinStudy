@@ -55,7 +55,7 @@ fun main(args: Array<String>) {
      * 주로 어떤 값을 계산할 필요가 있거나 여러 개의 지역변수 범위를 제한할 때 사용한다.
      */
     val member = run {
-        Member("Baker", 37u)
+        Member("Baker", 37)
     }
 
     /**
@@ -101,8 +101,8 @@ fun main(args: Array<String>) {
      * apply 함수는 객체의 프로퍼티 만을 사용하는 경우가 많으며, 대표적인 사례는 객체의 초기화이다.
      */
 
-    val member2 = Member("Baker", 0u).apply {
-        age = 25u
+    val member2 = Member("Baker", 0).apply {
+        age = 25
     }
     println(member2)
 
@@ -156,12 +156,12 @@ fun main(args: Array<String>) {
     println(length)
 }
 
-data class Member(val name: String, var age: UInt) {
+data class Member(val name: String, var age: Int) {
     fun isUncle(): Boolean {
         return true
     }
 
-    fun plusAge(): UInt {
+    fun plusAge(): Int {
         age++
         return age
     }
