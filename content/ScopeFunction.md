@@ -131,6 +131,7 @@ fun applyTest(){
 결론
 ====
 - 내가 코드한다면 햇갈리니.. let이랑 also 만 쓰겠다...
+- 다른사람도 같은 의견이.. https://www.bsidesoft.com/8586
 - 굳이 it 안쓰고 맴버변수나 메소드 쓸필요가.. 이것도한 코드가 많아진다고 한다면 어쩔 수 없으나.. 난 걍 let, also 만 쓰겠다. ^^
 
 
@@ -148,3 +149,5 @@ fun applyTest(){
 ~~~
 > *** Result ***
 > with Car(name=root)
+
+
