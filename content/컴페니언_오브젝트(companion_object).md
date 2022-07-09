@@ -8,7 +8,6 @@ Companion Object & Factory Pattern
 ## 1. Companion Object ?! like Static?! 
 - Companion Object은 Java의 Static과 같은가?! No~!!!
 - 단순히 인스턴스에 올라가는 메모리 영역이 아닌, 변수도 함수도 될 수 있으며,
-- 해당 하는 이름으로 리플랙션(Reflection)을 할수 있는 필드들을 제공한다~!
 - 클래스내 Companion Object 딱하나 쓸 수 있다.
 
 ~~~
