@@ -135,9 +135,9 @@ fun applyTest(){
 - 굳이 it 안쓰고 맴버변수나 메소드 쓸필요가.. 이것도한 코드가 많아진다고 한다면 어쩔 수 없으나.. 난 걍 let, also 만 쓰겠다. ^^
 
 
-### 0. with (코드줄임용~~)
+### 0. with (코드줄임용~~ like apply)
 - 이건 사용방법이 고정이라.. it에 해당하는 값만 바꾸는데 사용~
-- also, apply랑 같은 기능.
+- apply랑 같은 기능.
 - 정말코드를 줄이는 용도.. Entity에 값을 바꿀때 " EntityObject.setName(~~~) " 요런 코드가 다반사일때, "EntityObject." 를 안쓸수 있다.
 ~~~
     var car = Car("ray")

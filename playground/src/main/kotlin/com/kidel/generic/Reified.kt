@@ -10,8 +10,8 @@ fun main() {
         return mapper.readValue(this, c.java)
     }
 
-    inline fun <reified T: Any> String.toKotlinObjectReified(): T {
-        val mapper = jacksonObjectMapper()
-        return mapper.readValue(this, T::class.java)
-    }
+//    inline fun <reified T: Any> String.toKotlinObjectReified(): T {
+//        val mapper = jacksonObjectMapper()
+//        return mapper.readValue(this, T::class.java)
+//    }
 }
