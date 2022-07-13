@@ -3,6 +3,7 @@ package com.kidel.expend;
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
         // 자바에서 호출할 때: 첫 번째 인자로 수신 객체가 들어간다.
         String decoStr = StringUtilsKt.getDecorated("KIDEL", "#####", "#####");
