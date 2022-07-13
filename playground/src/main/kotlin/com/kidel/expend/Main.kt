@@ -8,5 +8,7 @@ fun main() {
     val endIndex = 3
     val sliceAvg = numberList.getPartialAverage(startIndex, endIndex)
 
+    "".lastIndex
+
     println("AVG from $startIndex to $endIndex => $sliceAvg")
 }
