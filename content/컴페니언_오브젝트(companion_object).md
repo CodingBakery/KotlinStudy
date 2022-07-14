@@ -10,7 +10,7 @@ Companion Object & Factory Pattern
 - 단순히 인스턴스에 올라가는 메모리 영역이 아닌, 변수도 함수도 될 수 있으며,
 - 클래스내 Companion Object 딱하나 쓸 수 있다.
 
-~~~
+~~~ kotlin
 class CmpnonObjTest1 {
     companion object{
         val prop = "나는 Companion object의 속성이다."
@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
 ~~~
 - 이름 지정도 가능하다~!
 - But 기존 처럼 "Companion"는 사용할수 없당~!
-~~~
+~~~kotlin
 class CmpnonObjTest2 {
     companion object factory{
         val prop = "나는 Companion object의 속성이다."
@@ -62,7 +62,7 @@ By : 구성(Compoistion)을 이용한 위임(Delegation) 전략
 - https://velog.io/@haero_kim/Kotlin-by-%ED%82%A4%EC%9B%8C%EB%93%9C%EC%9D%98-%EC%97%AD%ED%95%A0-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0
 - https://www.bsidesoft.com/8146
 ### 아래 코드를 보면 Entity라는 클래스에 By로 먼가를 해놓았다.
-~~~
+~~~kotlin
 class Entity{
   var userid by Field("hika")
   var count by Field(0)
