@@ -72,13 +72,13 @@ class Entity{
 - "=" 과는 다르게 단순한 변수 선언이 아니라 userid Field클래스의 모든 기능을 위임하게 된다.
 
 ## 1. By 그는 무엇인가?
-~~~
+~~~kotlin
 interface IWindow {
     fun getWidth() : Int
     fun getHeight() : Int
 }
 ~~~
-~~~
+~~~kotlin
 open class TransparentWindow : IWindow {
     override fun getWidth(): Int {
         return 100
@@ -91,7 +91,7 @@ open class TransparentWindow : IWindow {
 ~~~
 - 위와 같은 TransparentWindow 클래스가 있다.
 - TransparentWindow 를 구성을 이용한 위임받은 클래스 UI 클래스를 만들려면 아래와 같이 나온다.
-~~~
+~~~kotlin
 class UI(window: IWindow) : IWindow {
     val mWindow: IWindow = window
 
@@ -107,7 +107,7 @@ class UI(window: IWindow) : IWindow {
 ### 코트린에선....
 - 아래 한줄로 끝난다.!!!!
 - 구성을 이용한 위임을 키워드 하나로 바꿔버리는 코틀린의 위엄~~!!
-~~~
+~~~kotlin
 class UI(window: IWindow) : IWindow by window { }
 ~~~
 
@@ -115,7 +115,7 @@ class UI(window: IWindow) : IWindow by window { }
 - 근데 사용하는게 어쩨 "=" 이랑 같은거 아녀?? 라고 생각이 들수 있다. 
 - 그래서 준비한 아래 내용.
 - by 는 해당 클래스의 getValue을 실행하여 값을 가져온다. 
-~~~~
+~~~~kotlin
 class byCalss {
     var userid by Field("eager20")
     var count by Field(0)
@@ -140,7 +140,7 @@ fun main(args: Array<String>) {
 
 - = 는 해당 클래스의 Field라는 클랙스는 제네릭으로만 선언되었기 때문에
 - 그냥 해당 클래서의 오브젝트만을 가져오게 된다.
-~~~
+~~~kotlin
 class byTest {
     var userid = Field2("eager20")
     var count = Field2(0)
@@ -167,7 +167,7 @@ fun main(args: Array<String>) {
 
 ## 3. 심플한 사용방법
 - 멤버필드 userid 가 맵key값으로 인지 되어 들어가는 마법..
-~~~
+~~~kotlin
 package com.brandon.cmpnObj
 
 class Entity{
@@ -195,7 +195,7 @@ fun main(args: Array<String>) {
 ## 4. 리플렉션과 by를 이용한 콜라브레이숀..
 - prop.name로 userid 혹은 count이름을 가져올수 있으며 (Reflection) 해당 값을 Map에 값을 넣는다.
 - Dele 클래스를 만들어 입력받은 map과 입력받은 값을 이용하여 해당 클래스에 prop.name을 알아내 값을 이용
-~~~
+~~~kotlin
 class ByFunction {
     val map = mutableMapOf<String, Any>()
     private fun <T:Any> byFunc(v:T) = Dele(v, map)
