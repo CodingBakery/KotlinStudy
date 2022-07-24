@@ -134,8 +134,7 @@ fun main(args: Array<String>) {
     println( value.count )
 }
 ~~~~
-> 결과
-> eager20
+> eager20  
 > 0
 
 - = 는 해당 클래스의 Field라는 클랙스는 제네릭으로만 선언되었기 때문에
@@ -160,10 +159,9 @@ fun main(args: Array<String>) {
     println( value.count )
 }
 ~~~
-> 결과
-> com.brandon.cmpnObj.byTest@38af3868
-> com.brandon.cmpnObj.Field2@77459877
-> com.brandon.cmpnObj.Field2@5b2133b1
+> com.brandon.cmpnObj.byTest@38af3868  
+> com.brandon.cmpnObj.Field2@77459877  
+> com.brandon.cmpnObj.Field2@5b2133b1  
 
 ## 3. 심플한 사용방법
 - 멤버필드 userid 가 맵key값으로 인지 되어 들어가는 마법..
@@ -188,8 +186,7 @@ fun main(args: Array<String>) {
 
 }
 ~~~
-> 결과
-> hika
+> hika  
 > 0
 
 ## 4. 리플렉션과 by를 이용한 콜라브레이숀..
@@ -232,8 +229,7 @@ fun main(args: Array<String>) {
 
 }
 ~~~
-> 결과
-> eager20
-> 0
-> userid = eager20
+> eager20  
+> 0  
+> userid = eager20  
 > count = 0

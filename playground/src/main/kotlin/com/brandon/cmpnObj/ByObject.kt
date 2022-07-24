@@ -13,6 +13,13 @@ class Entity{
 fun main(args: Array<String>) {
 
     val value = Entity() ;
+
+    println( value.userid )
+    println( value.count )
+    value.map.set("userid","baker")
+    println( value.userid )
+    println( value.count )
+    value.userid = "dominic"
     println( value.userid )
     println( value.count )
 
