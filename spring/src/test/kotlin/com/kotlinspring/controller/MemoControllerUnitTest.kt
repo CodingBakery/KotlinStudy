@@ -32,10 +32,9 @@ class MemoControllerUnitTest {
             )
         )
 
-
         val memos = webTestClient
             .get()
-            .uri("/v1/courses")
+            .uri("/memo")
             .exchange()
             .expectStatus().isOk
             .expectBodyList(MemoDTO::class.java)

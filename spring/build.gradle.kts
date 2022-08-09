@@ -4,7 +4,7 @@ plugins {
 	id("org.springframework.boot") version "2.6.3"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.10"
-	kotlin("plugin.spring") version "1.6.10"
+	kotlin("plugin.spring") version "1.6.10"	// 이 플러그인을 사용하면 all-open이 자동으로 구성된다~
 	kotlin("plugin.jpa") version "1.6.10"
 }
 
