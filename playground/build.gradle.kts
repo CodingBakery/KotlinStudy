@@ -1,6 +1,8 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 import java.util.regex.Pattern.compile
 
 plugins {
+    kotlin("kapt") version "1.5.30"
     kotlin("jvm") version "1.5.10"
     java
 }
@@ -25,6 +27,10 @@ dependencies {
     testImplementation("io.kotest:kotest-assertions-core:5.3.2")
     testImplementation("io.kotest:kotest-property:5.3.2")
     testImplementation("io.mockk:mockk:1.12.4")
+
+    implementation("org.mapstruct:mapstruct:1.5.1.Final")
+    kapt("org.mapstruct:mapstruct-processor:1.5.1.Final")
+    kaptTest("org.mapstruct:mapstruct-processor:1.5.1.Final")
 }
 
 tasks.getByName<Test>("test") {
@@ -34,3 +40,5 @@ tasks.getByName<Test>("test") {
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
+
+tasks.register("prepareKotlinBuildScriptModel"){}
