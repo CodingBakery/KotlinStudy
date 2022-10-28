@@ -17,7 +17,13 @@ class FuncRefMyClass2 {
         fun myFun2(no: Int): Boolean {
             return no < 10
         }
+
+        fun myFunString(no: Int): String {
+            return no.toString()+"!"
+        }
+
     }
+
 }
 
 fun main(){
@@ -31,6 +37,16 @@ fun main(){
 
     println()
     //ERROR!! array.filter(FuncRefMyClass::myFun2).forEach{ print("${it}, ") }
-    array.filter(FuncRefMyClass2::myFun2).forEach{ print("${it}, ") }
+    array.filter(FuncRefMyClass2::myFun2).forEach{ print("111 ${it}, ") }
+    println()
+    array.filter { FuncRefMyClass2.myFun2(it) }.forEach{ print("222 ${it}, ") }
+    println()
+    array.map{ FuncRefMyClass2.myFunString(it)}.forEach{ print("333 ${it}, ") }
+
+    println()
+    array.map(FuncRefMyClass2::myFunString).forEach{ print("444 ${it}, ") }
+
+    println()
+    ///array.map(FuncRefMyClass2::m).forEach{ print("333${it}, ") }
 
 }
